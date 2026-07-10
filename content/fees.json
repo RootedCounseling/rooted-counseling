@@ -1,0 +1,29 @@
+{
+  "sessionFee": "[Session fee — Matthew to confirm]",
+  "faq": [
+    {
+      "question": "Do you take insurance?",
+      "answer": "No — Cultivate Counseling Ohio is private-pay only. For many clients this is a feature, not a drawback: nothing is billed to insurance, so no diagnosis is filed on your permanent medical record, and what we work on stays entirely between us."
+    },
+    {
+      "question": "What does a session cost?",
+      "answer": "See the fee listed above. Under the federal No Surprises Act, you have the right to receive a good-faith estimate of the expected cost of your care before you begin — just ask."
+    },
+    {
+      "question": "What happens in a first session?",
+      "answer": "The first session is a conversation, not an interrogation. You share what you're comfortable sharing, Matthew explains how he works, and together you decide whether it feels like a fit. There is no obligation to continue."
+    },
+    {
+      "question": "Do I have to talk about faith?",
+      "answer": "No. Faith-based integration is available if — and only if — you want it. It is never assumed, and choosing not to include it changes nothing about your care."
+    },
+    {
+      "question": "Can we meet online?",
+      "answer": "Yes. Sessions are available in person at the West Chester office or by secure telehealth. Matthew is licensed in Ohio, so telehealth clients must be located in Ohio."
+    },
+    {
+      "question": "Is what I say confidential?",
+      "answer": "Yes, within the limits the law requires of every licensed counselor (such as imminent risk of harm). Those limits are explained clearly before your first session."
+    }
+  ]
+}
