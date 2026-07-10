@@ -1,17 +1,115 @@
 ---
-
+import Base from '../layouts/Base.astro';
+import { home, site, specialties } from '../lib/content';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base
+  title="Counseling in West Chester, Ohio"
+  description="Counseling for betrayal trauma, addiction recovery, relationships, anxiety, and depression — in person in West Chester, Ohio, or by telehealth across Ohio."
+>
+  <section class="section hero">
+    <div class="wrap">
+      <h1>{home.heroHeading}</h1>
+      <p class="lede">{home.heroSubtext}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact/">Reach out</a>
+        <a class="btn btn-quiet" href="/specialties/">What I help with</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section intro">
+    <div class="wrap intro-grid">
+      <img
+        src={site.headshot ?? '/assets/matthew-headshot.jpg'}
+        alt="Matthew, counselor at Cultivate Counseling Ohio, smiling outdoors in front of autumn leaves"
+        width="480"
+        height="402"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div>
+        <h2>You'll be talking with Matthew.</h2>
+        <p class="voice">{home.personalWelcome}</p>
+        <p><a href="/about/">More about Matthew and how he works →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>What we can work on together</h2>
+      <ul class="card-grid">
+        {specialties.map((s) => (
+          <li class="card">
+            <h3><a href={`/specialties/${s.slug}/`}>{s.title}</a></h3>
+            <p>{s.cardText}</p>
+            <a class="more" href={`/specialties/${s.slug}/`}>Read more →</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>The practical part, up front</h2>
+      <ul class="facts">
+        <li><strong>Where:</strong> in person in West Chester, Ohio, or secure telehealth anywhere in Ohio.</li>
+        <li><strong>Cost:</strong> private pay only — no insurance involved, which also means no diagnosis on your record. <a href="/fees/">Fees & FAQ</a></li>
+        <li><strong>Faith:</strong> faith-based integration is available if you want it — never assumed.</li>
+        <li><strong>First step:</strong> <a href="/contact/">send a short message</a> or <a href={site.simplePracticeUrl} rel="noopener">schedule directly</a>. No commitment, no pressure.</li>
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding-top: clamp(3rem, 9vw, 5.5rem);
+  }
+
+  .hero h1 {
+    max-width: 21ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+
+  .intro-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .intro-grid img {
+    border-radius: var(--radius);
+    max-width: 26rem;
+    width: 100%;
+  }
+
+  @media (min-width: 760px) {
+    .intro-grid {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: 3rem;
+    }
+  }
+
+  .facts {
+    list-style: none;
+    padding: 0;
+  }
+
+  .facts li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .facts li:last-child {
+    border-bottom: 0;
+  }
+</style>

@@ -1,0 +1,119 @@
+---
+import '@fontsource-variable/lora';
+import '../styles/global.css';
+import { site } from '../lib/content';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const path = Astro.url.pathname;
+
+const nav = [
+  { href: '/specialties/', label: 'Specialties' },
+  { href: '/about/', label: 'About Matthew' },
+  { href: '/fees/', label: 'Fees & FAQ' },
+  { href: '/contact/', label: 'Contact' },
+];
+
+const current = (href: string) =>
+  path === href || (href !== '/' && path.startsWith(href)) ? 'page' : undefined;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: site.practiceName,
+  description:
+    'Counseling for betrayal trauma, sex addiction recovery, relationships, anxiety, depression, and past trauma. In person in West Chester, Ohio, and by telehealth across Ohio.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.addressLine1,
+    addressLocality: 'West Chester',
+    addressRegion: 'OH',
+    postalCode: '45069',
+    addressCountry: 'US',
+  },
+  areaServed: { '@type': 'State', name: 'Ohio' },
+  priceRange: 'Private pay',
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · {site.practiceName}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={`${title} · ${site.practiceName}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <a class="wordmark" href="/">
+          Cultivate Counseling
+          <small>Ohio</small>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          {nav.map((item) => (
+            <a href={item.href} aria-current={current(item.href)}>{item.label}</a>
+          ))}
+          <a class="btn btn-primary" href="/contact/">Reach out</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="crisis-note">This site is not for emergencies. If you are in crisis, call or text 988.</p>
+
+        <div class="footer-cols">
+          <div>
+            <h3>Visit</h3>
+            <ul>
+              <li>{site.addressLine1}</li>
+              <li>{site.addressLine2}</li>
+              <li>In person, or telehealth across Ohio</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Pages</h3>
+            <ul>
+              {nav.map((item) => (
+                <li><a href={item.href}>{item.label}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3>Good to know</h3>
+            <ul>
+              <li>Licensed in Ohio only</li>
+              <li>Private pay — insurance is not accepted</li>
+              <li><a href={site.simplePracticeUrl} rel="noopener">Schedule via SimplePractice</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-fine">
+          <p>
+            Your privacy matters here: this site sets no cookies, runs no trackers, and keeps no record of your
+            visit.
+          </p>
+          {site.supervisionDisclosure && <p>{site.supervisionDisclosure}</p>}
+          <p>© {new Date().getFullYear()} {site.practiceName}</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

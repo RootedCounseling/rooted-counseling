@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import { specialties } from '../../lib/content';
+---
+
+<Base
+  title="Specialties"
+  description="Counseling for relational betrayal trauma, sex addiction recovery, marriage and relationship challenges, anxiety and depression, and healing from past trauma — West Chester, Ohio and telehealth statewide."
+>
+  <section class="section">
+    <div class="wrap">
+      <h1>What we can work on together</h1>
+      <p class="lede">
+        You don't need the right words for what's happening — that's part of what counseling is for. If any of
+        these sounds like your life right now, start there.
+      </p>
+      <ul class="card-grid">
+        {specialties.map((s) => (
+          <li class="card">
+            <h3><a href={`/specialties/${s.slug}/`}>{s.title}</a></h3>
+            <p>{s.cardText}</p>
+            <a class="more" href={`/specialties/${s.slug}/`}>Read more →</a>
+          </li>
+        ))}
+      </ul>
+      <p>
+        Not sure where you fit? That's common — many people arrive carrying more than one of these.
+        <a href="/contact/">Reach out</a> and we'll figure out the starting point together.
+      </p>
+    </div>
+  </section>
+</Base>

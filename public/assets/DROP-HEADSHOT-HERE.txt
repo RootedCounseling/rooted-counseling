@@ -1,6 +1,0 @@
-Drop matthew-headshot.jpg into this folder.
-
-The site expects it at exactly: public/assets/matthew-headshot.jpg
-(It will be served at /assets/matthew-headshot.jpg)
-
-This placeholder file can be deleted once the photo is in place.

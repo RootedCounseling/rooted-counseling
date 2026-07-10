@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import { fees, site } from '../lib/content';
+---
+
+<Base
+  title="Fees & FAQ"
+  description="Private-pay counseling in West Chester, Ohio. Session fees, the No Surprises Act good-faith estimate, and answers to common questions."
+>
+  <section class="section">
+    <div class="wrap">
+      <h1>Fees & FAQ</h1>
+
+      <h2>What it costs</h2>
+      <p class="fee">{fees.sessionFee}</p>
+      <p>
+        Cultivate Counseling Ohio is private pay only — no insurance is accepted and there is no sliding scale.
+        Paying privately means no insurance company sees your records, no diagnosis is filed on your permanent
+        medical record, and what we work on is decided by you, not a coverage policy.
+      </p>
+      <p class="notice">
+        Under the federal No Surprises Act, you have the right to a good-faith estimate of the expected cost of
+        your care before you begin — just ask when you reach out.
+      </p>
+
+      <h2>Common questions</h2>
+      <dl class="faq">
+        {fees.faq.map((item) => (
+          <>
+            <dt>{item.question}</dt>
+            <dd>{item.answer}</dd>
+          </>
+        ))}
+      </dl>
+
+      <h2>Anything else?</h2>
+      <p>
+        If your question isn't here, just ask — <a href="/contact/">send a message</a> and Matthew will reply
+        personally. Or <a href={site.simplePracticeUrl} rel="noopener">schedule directly through SimplePractice</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .fee {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+  }
+
+  .faq dt {
+    font-weight: 650;
+    margin-top: 1.4rem;
+  }
+
+  .faq dd {
+    margin: 0.35rem 0 0;
+    max-width: var(--measure);
+    color: var(--ink-soft);
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site, specialties } from '../../lib/content';
+
+export function getStaticPaths() {
+  return specialties.map((s) => ({ params: { slug: s.slug }, props: { specialty: s } }));
+}
+
+const { specialty } = Astro.props;
+const others = specialties.filter((s) => s.slug !== specialty.slug);
+---
+
+<Base title={specialty.title} description={specialty.cardText}>
+  <section class="section">
+    <div class="wrap">
+      <h1>{specialty.title}</h1>
+
+      <p class="voice">{specialty.whatThisFeelsLike}</p>
+
+      <h2>How we'll work on it</h2>
+      <p>{specialty.howWeWork}</p>
+
+      <h2>When you're ready</h2>
+      <p>
+        There's no form to fill out about what happened and no pressure to commit to anything. Send a short
+        message — even just "I'd like to talk" — and Matthew will reply personally.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/contact/">Reach out</a>
+        <a class="btn btn-quiet" href={site.simplePracticeUrl} rel="noopener">Schedule a session</a>
+      </div>
+
+      <hr />
+
+      <p class="other-heading"><strong>Also here for:</strong></p>
+      <ul class="other-list">
+        {others.map((s) => (
+          <li><a href={`/specialties/${s.slug}/`}>{s.title}</a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .other-heading {
+    margin-bottom: 0.4em;
+  }
+
+  .other-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.4rem;
+  }
+</style>

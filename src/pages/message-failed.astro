@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../lib/content';
+---
+
+<Base title="Message didn't send" description="The contact form hit a technical problem — here's how to reach Matthew directly.">
+  <section class="section">
+    <div class="wrap">
+      <h1>That didn't go through — but you can still reach Matthew.</h1>
+      <p class="lede">
+        The form hit a technical problem on our end. It's not you, and your message wasn't lost to spam or
+        ignored — it just didn't send.
+      </p>
+      <p>
+        Please email Matthew directly at <strong>{site.email}</strong>, or
+        <a href={site.simplePracticeUrl} rel="noopener">schedule through SimplePractice</a> — scheduling works
+        independently of this form.
+      </p>
+      <p><a href="/contact/">Try the form again</a></p>
+    </div>
+  </section>
+</Base>

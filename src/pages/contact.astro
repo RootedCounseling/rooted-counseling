@@ -1,0 +1,103 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../lib/content';
+---
+
+<Base
+  title="Reach out"
+  description="Send a short, private message to Matthew at Cultivate Counseling Ohio, or schedule directly through SimplePractice. In person in West Chester, Ohio, or telehealth statewide."
+>
+  <section class="section">
+    <div class="wrap contact-grid">
+      <div>
+        <h1>Reach out</h1>
+        <p class="lede">
+          A short message is enough — even just "I'd like to talk." You don't need to explain anything here.
+        </p>
+        <p>
+          Matthew reads and replies to every message personally, usually within one business day. Reaching out
+          doesn't commit you to anything.
+        </p>
+
+        <form class="form-grid" method="POST" action="/api/contact">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" maxlength="120" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" maxlength="200" />
+          </div>
+          <div>
+            <label for="phone">Phone <span class="optional">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required maxlength="4000"></textarea>
+          </div>
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <div>
+            <button class="btn btn-primary" type="submit">Send message</button>
+          </div>
+        </form>
+
+        <p class="privacy-line">
+          This form asks only for your name and how to reach you — please don't include details about your
+          situation here; that belongs in a confidential conversation. Nothing you send is stored on this
+          website: your message goes straight to Matthew's email and nowhere else.
+        </p>
+      </div>
+
+      <aside>
+        <h2>Other ways in</h2>
+        <p>
+          <strong>Schedule directly</strong><br />
+          <a href={site.simplePracticeUrl} rel="noopener">Book through SimplePractice</a>
+        </p>
+        <p>
+          <strong>Visit</strong><br />
+          {site.addressLine1}<br />
+          {site.addressLine2}
+        </p>
+        {site.phone && (
+          <p>
+            <strong>Call</strong><br />
+            {site.phone}
+          </p>
+        )}
+        <p>
+          <strong>Telehealth</strong><br />
+          Secure video sessions for clients anywhere in Ohio.
+        </p>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact-grid {
+    display: grid;
+    gap: 3rem;
+  }
+
+  @media (min-width: 800px) {
+    .contact-grid {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    }
+  }
+
+  aside h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+
+  .privacy-line {
+    margin-top: 1.5rem;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+</style>

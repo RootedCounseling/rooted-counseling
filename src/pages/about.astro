@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import { about, site } from '../lib/content';
+---
+
+<Base
+  title="About Matthew"
+  description="Matthew is a Licensed Professional Counselor in Ohio, working with betrayal trauma, addiction recovery, relationships, anxiety, depression, and past trauma using CBT and EFT."
+>
+  <section class="section">
+    <div class="wrap about-grid">
+      <img
+        src={site.headshot ?? '/assets/matthew-headshot.jpg'}
+        alt="Matthew, counselor at Cultivate Counseling Ohio, smiling outdoors in front of autumn leaves"
+        width="480"
+        height="402"
+        loading="eager"
+      />
+      <div>
+        <h1>Matthew</h1>
+        <p class="credentials">{about.credentials}</p>
+        <p class="voice">{about.bio}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>How he works</h2>
+      <p>
+        Sessions draw on Cognitive Behavioral Therapy (CBT) — practical, evidence-based work with the thought
+        patterns that keep pain in place — and Emotionally Focused Therapy (EFT), which looks underneath conflict
+        and distance to the needs driving them. What that looks like depends entirely on what you bring.
+      </p>
+      <p class="voice">{about.approachNote}</p>
+
+      <h2>About faith</h2>
+      <p>
+        Faith-based integration is available if — and only if — you want it. It is never assumed, never a
+        prerequisite, and never introduced unless you ask for it. Clients of any faith or none receive the same
+        care.
+      </p>
+      <p class="voice">{about.faithNote}</p>
+
+      <h2>The details</h2>
+      <ul>
+        <li>Licensed in Ohio; clients must be located in Ohio (including for telehealth)</li>
+        <li>In-person sessions at {site.addressLine1}, {site.addressLine2}</li>
+        <li>Secure telehealth available statewide</li>
+        <li>Scheduling through <a href={site.simplePracticeUrl} rel="noopener">SimplePractice</a></li>
+      </ul>
+      {site.supervisionDisclosure && <p class="notice">{site.supervisionDisclosure}</p>}
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/contact/">Reach out</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .about-grid img {
+    border-radius: var(--radius);
+    max-width: 24rem;
+    width: 100%;
+  }
+
+  @media (min-width: 760px) {
+    .about-grid {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: 3rem;
+    }
+  }
+
+  .credentials {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    margin-top: -0.5rem;
+  }
+
+  .cta-row {
+    margin-top: 1.5rem;
+  }
+</style>
