@@ -1,5 +1,5 @@
 {
-  "sessionFee": "[Session fee — Matthew to confirm]",
+  "sessionFee": "$150 per session",
   "faq": [
     {
       "question": "Do you take insurance?",
@@ -10,8 +10,12 @@
       "answer": "See the fee listed above. Under the federal No Surprises Act, you have the right to receive a good-faith estimate of the expected cost of your care before you begin — just ask."
     },
     {
+      "question": "Do you offer a free consultation?",
+      "answer": "Yes. Every new client is offered a free 15-minute phone or video consultation before scheduling a first session — a low-pressure chance to ask questions and see if working together feels right."
+    },
+    {
       "question": "What happens in a first session?",
-      "answer": "The first session is a conversation, not an interrogation. You share what you're comfortable sharing, Matthew explains how he works, and together you decide whether it feels like a fit. There is no obligation to continue."
+      "answer": "Our first session is for you sharing your story and the greatest challenge or opportunity that brings you to counseling. We set a goal to achieve and the path we will take to journey there."
     },
     {
       "question": "Do I have to talk about faith?",

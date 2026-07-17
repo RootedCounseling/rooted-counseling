@@ -68,12 +68,12 @@ export default config({
             'Counseling for betrayal trauma, addiction recovery, relationships, anxiety, and depression — in person in West Chester, Ohio, or by telehealth anywhere in the state.',
         }),
         personalWelcome: fields.text({
-          label: "Personal welcome (Matthew's voice — DRAFT)",
+          label: "Personal welcome (Matthew's own words)",
           description:
-            'One or two sentences from Matthew to the person reading, shown beside his photo on the homepage. REWRITE BEFORE LAUNCH — the current text is a placeholder.',
+            "Matthew's personal welcome to the reader, shown beside his photo on the homepage.",
           multiline: true,
           defaultValue:
-            "[DRAFT — Matthew to rewrite in his own words] I'm Matthew. Reaching out is hard — I want you to know that whatever you bring, you'll be met with acceptance, not judgment.",
+            'Getting started is the hardest part. That’s why I offer a 15-minute free phone or web consultation before we walk along your path of reconciliation and growth. Cultivating what is rooted in your mind and heart leads to a fruitful life filled with strength and purpose. Let’s start the journey together!',
         }),
       },
     }),
@@ -121,8 +121,8 @@ export default config({
       schema: {
         sessionFee: fields.text({
           label: 'Session fee',
-          description: 'e.g. "$140 per 50-minute session". Replace before launch.',
-          defaultValue: '[Session fee — Matthew to confirm]',
+          description: 'e.g. "$150 per session".',
+          defaultValue: '$150 per session',
         }),
         faq: fields.array(
           fields.object({
