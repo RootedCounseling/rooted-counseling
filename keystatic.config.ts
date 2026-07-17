@@ -73,7 +73,7 @@ export default config({
             "Matthew's personal welcome to the reader, shown beside his photo on the homepage.",
           multiline: true,
           defaultValue:
-            'Getting started is the hardest part. That’s why I offer a 15-minute free phone or web consultation before we walk along your path of reconciliation and growth. Cultivating what is rooted in your mind and heart leads to a fruitful life filled with strength and purpose. Let’s start the journey together!',
+            'Getting started is the hardest part. That’s why I offer a free 15-minute phone or video consultation before we begin — no pressure, no commitment. Whatever you’re carrying, cultivating what’s rooted in your heart can lead to real strength and purpose. Let’s start the journey together.',
         }),
       },
     }),
