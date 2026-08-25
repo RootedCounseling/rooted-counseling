@@ -221,8 +221,8 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem 1.5rem;
-  padding-block: 1rem;
+  gap: 0.6rem 1.5rem;
+  padding-block: 0.85rem;
 }
 
 /* The supplied logo is a stacked lockup whose "COUNSELING" line is only ~7% of
@@ -239,14 +239,14 @@ img {
 
 .wordmark img {
   width: auto;
-  height: 2.7rem;
+  height: 4.4rem;
 }
 
 .wordmark span {
   display: block;
-  margin-top: 0.28rem;
+  margin-top: 0.3rem;
   font-family: var(--font-sans);
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.3em;
   text-indent: 0.3em;
@@ -258,10 +258,10 @@ img {
 
 @media (min-width: 640px) {
   .wordmark img {
-    height: 3.2rem;
+    height: 5.6rem;
   }
   .wordmark span {
-    font-size: 0.68rem;
+    font-size: 0.92rem;
   }
 }
 

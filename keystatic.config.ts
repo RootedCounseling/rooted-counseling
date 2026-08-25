@@ -41,7 +41,7 @@ export default config({
           description:
             'Ohio requires LPCs under supervision to name their supervisor (and license number) on all materials. Clear it entirely if Matthew is fully licensed (LPCC) by opening day.',
           defaultValue:
-            'Matthew is currently practicing under the supervision of Jessica Moore, LPC-S [license number — confirm before launch].',
+            'Matthew is currently practicing under the supervision of Jessica Moore, LPC-S (License #E.1901316-SUPV).',
         }),
         headshot: fields.image({
           label: 'Headshot photo',

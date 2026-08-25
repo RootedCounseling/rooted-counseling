@@ -114,12 +114,11 @@ When starting the dev server in an agent session, prefer background mode:
 - [ ] Matthew rewrites every `[DRAFT — …]` field via `/keystatic`
 - [ ] Confirm contact email, SimplePractice scheduling URL (both placeholders in
       `content/site.json`)
-- [ ] Supervision disclosure now names Jessica Moore, LPC-S, but still needs her
-      **license number** filled in (bracketed placeholder in `content/site.json`).
-      Also still worth confirming with the Ohio licensing board whether this is
-      required at all — the project brief says yes for supervised LPCs; Matthew's
-      questionnaire said no. If he is fully licensed (LPCC) by opening day it's moot
-      and the field can be cleared entirely.
+- [x] Supervision disclosure is filled in: Jessica Moore, LPC-S (License
+      #E.1901316-SUPV), in `content/site.json`. Still worth confirming with the Ohio
+      licensing board whether this disclosure is required at all — the project brief
+      says yes for supervised LPCs; Matthew's questionnaire said no. If he is fully
+      licensed (LPCC) by opening day it's moot and the field can be cleared entirely.
 - [ ] Set `RESEND_API_KEY` and `CONTACT_TO` in Vercel so the contact form delivers
 - [ ] Point the custom domain at Vercel
 - [ ] Optionally enable Keystatic GitHub mode so Matthew can edit from any browser
