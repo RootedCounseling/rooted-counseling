@@ -4,6 +4,7 @@ import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
 import keystatic from '@keystatic/astro';
 import vercel from '@astrojs/vercel';
+import sitemap from '@astrojs/sitemap';
 
 // The Keystatic admin UI (/keystatic) is only mounted in local dev, where it
 // edits the content files on disk directly. To enable editing on the live
@@ -14,6 +15,7 @@ const keystaticEnabled =
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), markdoc(), ...(keystaticEnabled ? [keystatic()] : [])],
+  site: 'https://rootedcounseling.us',
+  integrations: [react(), markdoc(), sitemap(), ...(keystaticEnabled ? [keystatic()] : [])],
   adapter: vercel(),
 });

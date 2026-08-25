@@ -24,12 +24,12 @@ export default config({
         email: fields.text({
           label: 'Contact email',
           description: 'Where contact-form messages are sent and the email shown on the site.',
-          defaultValue: '[matthew@example.com — replace before launch]',
+          defaultValue: 'matthew@rootedcounseling.us',
         }),
         phone: fields.text({
           label: 'Phone (optional)',
-          description: 'Shown on the contact page if filled in. Leave blank to hide.',
-          defaultValue: '',
+          description: 'Shown as a tap-to-call link on the contact page if filled in. Leave blank to hide.',
+          defaultValue: '513-255-6130',
         }),
         simplePracticeUrl: fields.url({
           label: 'SimplePractice scheduling link',

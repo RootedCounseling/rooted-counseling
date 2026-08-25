@@ -70,7 +70,7 @@ import { site } from '../lib/content';
         {site.phone && (
           <p>
             <strong>Call</strong><br />
-            {site.phone}
+            <a href={`tel:+1${site.phone.replace(/\D/g, '')}`}>{site.phone}</a>
           </p>
         )}
         <p>

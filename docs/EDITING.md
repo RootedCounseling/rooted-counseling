@@ -22,12 +22,13 @@ Sections you'll find there:
 Every field whose label says **(Matthew's voice — DRAFT)** currently contains
 placeholder text beginning with `[DRAFT — Matthew to rewrite in his own words]`.
 These are stand-ins, not finished copy — they must be rewritten in Matthew's own
-words before the site goes live. Also confirm:
+words before the site goes live.
 
-- `[matthew@example.com — replace before launch]` (Practice details)
-- `[Supervision disclosure — confirm before launch]` (Practice details) — required
-  wording if practicing under supervision; delete entirely if fully licensed (LPCC) by opening day
-- The SimplePractice link (Practice details) — currently a placeholder URL
+Everything else in Practice details is filled in with real information (domain, email,
+phone, supervision disclosure) — the one thing still a placeholder is:
+
+- **The SimplePractice link** (Practice details) — still `https://example.clientsecure.me`.
+  Replace with Matthew's real scheduling URL once his SimplePractice account exists.
 
 For setting up the domain, hosting, and accounts in Matthew's own name, see
 [HANDOFF.md](HANDOFF.md).

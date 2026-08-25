@@ -21,10 +21,16 @@ const nav = [
 const current = (href: string) =>
   path === href || (href !== '/' && path.startsWith(href)) ? 'page' : undefined;
 
+const canonicalUrl = new URL(path, Astro.site).toString();
+const ogImageUrl = new URL(site.headshot ?? '/assets/matthew-headshot.jpg', Astro.site).toString();
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: site.practiceName,
+  url: Astro.site?.toString(),
+  ...(site.phone ? { telephone: site.phone } : {}),
+  email: site.email,
   description:
     'Counseling for betrayal trauma, sex addiction recovery, relationships, anxiety, depression, and past trauma. In person in West Chester, Ohio, and by telehealth across Ohio.',
   address: {
@@ -46,9 +52,13 @@ const jsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} · {site.practiceName}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={`${title} · ${site.practiceName}`} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/assets/tree-mark.png" />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

@@ -10,19 +10,23 @@ Do these in order. Steps 1–3 can happen before the site is finished.
 
 ## 1. Matthew buys the domain (his Namecheap account)
 
-Yes — he should buy it himself, on his own Namecheap account, with his own card. The
-domain is the one asset that genuinely matters long-term: it's the address on his
-business cards and the thing Google indexes. If it sits in someone else's account,
-every future transfer is a hassle.
+The domain is **rootedcounseling.us**. He should buy it himself, on his own Namecheap
+account, with his own card. The domain is the one asset that genuinely matters
+long-term: it's the address on his business cards and the thing Google indexes. If it
+sits in someone else's account, every future transfer is a hassle.
 
 1. Matthew creates his own account at namecheap.com
-2. Search for the domain and buy it
-3. **Turn on WHOIS / domain privacy** (Namecheap includes it free). Without it, his home
-   address and phone become public in the domain registry — bad for anyone, worse for a
-   counselor.
+2. Search for `rootedcounseling.us` and buy it
+3. **Turn on WHOIS / domain privacy** (Namecheap includes it free for most TLDs — worth
+   double-checking it's offered for `.us`, since a few registries restrict privacy on
+   country-code domains). Without it, his home address and phone become public in the
+   domain registry — bad for anyone, worse for a counselor.
 4. Turn on auto-renew, so the site doesn't vanish in a year
 
-Nothing else needs configuring at Namecheap yet — the DNS step comes in part 4.
+Nothing else needs configuring at Namecheap yet — the DNS step comes in part 4. The code
+already assumes this exact domain (`astro.config.mjs`, canonical URLs, sitemap,
+`robots.txt`) — if the final domain ever changes, that's a one-line update in
+`astro.config.mjs` plus the URL in `public/robots.txt`.
 
 **Before buying:** several Ohio practices already use "Rooted" — Rooted Compassion
 Counseling (Cincinnati, same metro as West Chester), Rooted & Restored (Columbus), Root
@@ -90,7 +94,8 @@ transfer it — the current deployment can just be deleted afterward.
 The domain (Namecheap) and the hosting (Vercel) are separate things; this step points
 one at the other. Matthew keeps ownership of the domain throughout.
 
-1. In Vercel: project → Settings → Domains → add the domain he bought
+1. In Vercel: project → Settings → Domains → add `rootedcounseling.us` (and
+   `www.rootedcounseling.us`, redirected to the root)
 2. Vercel shows the DNS records it wants (typically an `A` record for the root domain and
    a `CNAME` for `www`)
 3. In Namecheap: Domain List → Manage → **Advanced DNS**, and enter those records
