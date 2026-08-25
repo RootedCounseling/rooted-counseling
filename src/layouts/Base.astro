@@ -50,6 +50,7 @@ const jsonLd = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/tree-mark.png" />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
   </head>
   <body>
@@ -57,9 +58,10 @@ const jsonLd = {
 
     <header class="site-header">
       <div class="wrap">
-        <a class="wordmark" href="/">
-          Rooted Counseling
-          <small>Ohio</small>
+        <a class="wordmark" href="/" aria-label={`${site.practiceName} — home`}>
+          <img class="logo-light" src="/assets/rooted-logo-header.png" alt="" width="640" height="346" />
+          <img class="logo-dark" src="/assets/rooted-logo-header-dark.png" alt="" width="640" height="346" />
+          <span>Counseling <i>·</i> Ohio</span>
         </a>
         <nav class="site-nav" aria-label="Main">
           {nav.map((item) => (

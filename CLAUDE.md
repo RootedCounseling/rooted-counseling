@@ -58,14 +58,23 @@ Two fields are Matthew's real words already and must not be reworded without him
 
 ## Design intent
 
-Grounded, warm, unhurried — "a lit window at midnight," not a medical office. Evergreen
-ink on warm paper by day, with a genuinely designed dark theme for night readers
-(`prefers-color-scheme`, no toggle). The palette was drawn from Matthew's real headshot:
-evergreen shirt, golden autumn leaves.
+Grounded, warm, unhurried — "a lit window at midnight," not a medical office. Aubergine
+ink and a blue accent (from the client-supplied logo) on warm paper by day, with a
+genuinely designed dark theme for night readers (`prefers-color-scheme`, no toggle). Warm
+paper background and the amber action colour carried over from an earlier iteration built
+around Matthew's headshot (evergreen shirt, golden autumn leaves) — that photo is still
+the only image on the site, just no longer the palette source.
+
+The supplied logo (`public/assets/rooted-logo.png`, full lockup with tagline) has a
+"COUNSELING" line far too small relative to the tree mark to survive shrinking to header
+size — the header instead uses the mark cropped above that line
+(`rooted-logo-header.png` / `-dark.png`, generated from the original — see
+`docs/HANDOFF.md` if regenerating) plus live text underneath. Don't swap in the full
+lockup image at header size without re-checking legibility on a real phone.
 
 Deliberately avoided: clinical blue/teal, the cream-serif-terracotta look most
-AI-generated therapist sites land on, stock photos, leaf clip-art. The only image on the
-site is Matthew's real photo.
+AI-generated therapist sites land on, stock photos, leaf clip-art. The only photo on the
+site is Matthew's real headshot.
 
 Trauma-informed mechanics that must be preserved: no popups, no autoplay, no urgency or
 countdown language, no analytics or third-party scripts, `prefers-reduced-motion`
