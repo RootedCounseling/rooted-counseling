@@ -39,8 +39,9 @@ export default config({
         supervisionDisclosure: fields.text({
           label: 'Supervision disclosure (footer + About page)',
           description:
-            'Ohio requires LPCs under supervision to name their supervisor on all materials. Replace before launch — or clear it entirely if fully licensed (LPCC) by opening day.',
-          defaultValue: '[Supervision disclosure — confirm before launch]',
+            'Ohio requires LPCs under supervision to name their supervisor (and license number) on all materials. Clear it entirely if Matthew is fully licensed (LPCC) by opening day.',
+          defaultValue:
+            'Matthew is currently practicing under the supervision of Jessica Moore, LPC-S [license number — confirm before launch].',
         }),
         headshot: fields.image({
           label: 'Headshot photo',

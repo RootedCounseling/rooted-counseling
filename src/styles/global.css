@@ -256,12 +256,6 @@ img {
   color: var(--ink-soft);
 }
 
-.wordmark span i {
-  font-style: normal;
-  opacity: 0.55;
-  margin: 0 0.15em;
-}
-
 @media (min-width: 640px) {
   .wordmark img {
     height: 3.2rem;
