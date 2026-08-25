@@ -10,7 +10,7 @@ import { config, fields, singleton, collection } from '@keystatic/core';
 export default config({
   storage: { kind: 'local' },
   ui: {
-    brand: { name: 'Cultivate Counseling Ohio' },
+    brand: { name: 'Rooted Counseling Ohio' },
   },
   singletons: {
     site: singleton({
@@ -18,7 +18,7 @@ export default config({
       path: 'content/site',
       format: { data: 'json' },
       schema: {
-        practiceName: fields.text({ label: 'Practice name', defaultValue: 'Cultivate Counseling Ohio' }),
+        practiceName: fields.text({ label: 'Practice name', defaultValue: 'Rooted Counseling Ohio' }),
         addressLine1: fields.text({ label: 'Address line', defaultValue: '8859 Cincinnati Dayton Rd. #203' }),
         addressLine2: fields.text({ label: 'City, state, zip', defaultValue: 'West Chester, OH 45069' }),
         email: fields.text({

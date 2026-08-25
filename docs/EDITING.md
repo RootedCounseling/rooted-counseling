@@ -15,7 +15,7 @@ Sections you'll find there:
 - **Homepage** — hero text and Matthew's personal welcome
 - **About Matthew** — bio (verbatim), credentials, approach & faith notes
 - **Fees & FAQ** — session fee and every FAQ entry
-- **Specialties** — the five specialty pages
+- **Specialties** — the six specialty pages
 
 ## ⚠️ Before launch: fields Matthew MUST rewrite
 
@@ -24,11 +24,13 @@ placeholder text beginning with `[DRAFT — Matthew to rewrite in his own words]
 These are stand-ins, not finished copy — they must be rewritten in Matthew's own
 words before the site goes live. Also confirm:
 
-- `[Session fee — Matthew to confirm]` (Fees & FAQ)
 - `[matthew@example.com — replace before launch]` (Practice details)
 - `[Supervision disclosure — confirm before launch]` (Practice details) — required
   wording if practicing under supervision; delete entirely if fully licensed (LPCC) by opening day
 - The SimplePractice link (Practice details) — currently a placeholder URL
+
+For setting up the domain, hosting, and accounts in Matthew's own name, see
+[HANDOFF.md](HANDOFF.md).
 
 ## Editing on the live site (set up once, after deploy)
 

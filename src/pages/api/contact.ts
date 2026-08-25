@@ -58,7 +58,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         from: 'Website contact form <onboarding@resend.dev>',
         to: [to],
         reply_to: email,
-        subject: `New message from ${name} — cultivatecounseling website`,
+        subject: `New message from ${name} — Rooted Counseling website`,
         text: body,
       }),
     });
