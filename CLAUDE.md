@@ -17,13 +17,18 @@ them; the words that sound like him need to actually be his.
 
 When new voice-flavored text is needed:
 
-1. Write a **short** placeholder (1–2 sentences), prefixed literally with
-   `[DRAFT — Matthew to rewrite in his own words]`
+1. Write a **short** placeholder (1–2 sentences)
 2. Put it in **one isolated field** in `keystatic.config.ts` — never woven into page
    layout, never split across files
-3. Label the field `(Matthew's voice — DRAFT)` so it is obvious in the editing UI
+3. Label the field `(Matthew's voice — his to review)` so it is obvious in the editing UI
 
-Fields currently holding drafts awaiting Matthew's rewrite:
+**Current status (2026-08-25):** 8 such fields are live on the site with provisional
+wording — the family made a deliberate call to launch now rather than block on Matthew's
+rewrite, and sent him `docs/ASK-MATTHEW.md`, a plain-language list of exactly those 8
+passages with instructions for changing any of them. This was an explicit, informed
+decision by the people running this project, not a default to repeat unprompted — the
+next AI session shouldn't assume it's fine to ship voice copy live-by-default just
+because it happened this once. The fields:
 
 - `whatThisFeelsLike` on each specialty (`content/specialties/*.json`)
 - `approachNote` and `faithNote` (`content/about.json`)
@@ -109,18 +114,28 @@ npx vercel deploy --prod --yes
 When starting the dev server in an agent session, prefer background mode:
 `astro dev --background`, managed with `astro dev stop|status|logs`.
 
-## Before launch — still outstanding
+## Status
 
-- [ ] Matthew rewrites every `[DRAFT — …]` field via `/keystatic`
-- [ ] Confirm contact email, SimplePractice scheduling URL (both placeholders in
-      `content/site.json`)
-- [x] Supervision disclosure is filled in: Jessica Moore, LPC-S (License
-      #E.1901316-SUPV), in `content/site.json`. Still worth confirming with the Ohio
-      licensing board whether this disclosure is required at all — the project brief
-      says yes for supervised LPCs; Matthew's questionnaire said no. If he is fully
-      licensed (LPCC) by opening day it's moot and the field can be cleared entirely.
+- [x] Domain: `rootedcounseling.us`, purchased by Matthew on his own Namecheap account.
+- [x] Contact email (`matthew@rootedcounseling.us`) and phone (513-255-6130) are real,
+      in `content/site.json`. **Unverified: whether the domain inbox is actually
+      receiving mail** — test before relying on it for the contact form.
+- [x] Supervision disclosure filled in: Jessica Moore, LPC-S (License
+      #E.1901316-SUPV). Still worth confirming with the Ohio licensing board whether
+      this disclosure is required at all — the brief says yes for supervised LPCs;
+      Matthew's questionnaire said no. Moot if he's fully licensed (LPCC) by opening day.
+- [x] The 8 voice-copy fields are live with provisional wording; `docs/ASK-MATTHEW.md`
+      sent to him for review — see the note above.
+- [ ] SimplePractice scheduling link — still the placeholder URL in `content/site.json`
+      until Matthew's SimplePractice account exists.
 - [ ] Set `RESEND_API_KEY` and `CONTACT_TO` in Vercel so the contact form delivers
-- [ ] Point the custom domain at Vercel
+      (`CONTACT_TO` should be `matthew@rootedcounseling.us` once confirmed working)
+- [ ] Code needs pushing to Matthew's own GitHub account and importing into his own
+      Vercel account (he already has both) — see `docs/HANDOFF.md`
+- [ ] Point `rootedcounseling.us` at the Vercel deployment (DNS)
+- [ ] Update the Website field on Matthew's Google Business Profile to the live URL
+      once DNS is live
 - [ ] Optionally enable Keystatic GitHub mode so Matthew can edit from any browser
 
-See `docs/EDITING.md` (for Matthew) and `docs/HANDOFF.md` (accounts, domain, deploys).
+See `docs/EDITING.md` (for Matthew), `docs/ASK-MATTHEW.md` (the copy review list), and
+`docs/HANDOFF.md` (accounts, domain, deploys).

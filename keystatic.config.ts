@@ -3,9 +3,10 @@ import { config, fields, singleton, collection } from '@keystatic/core';
 // All site text lives in content/ as JSON files, edited through this admin UI
 // (/keystatic in local dev; see docs/EDITING.md for enabling it on the live site).
 //
-// Fields labeled "(Matthew's voice — DRAFT)" hold placeholder text that must be
-// rewritten by Matthew before launch. They are deliberately isolated fields so
-// rewriting them never touches layout or code.
+// Fields labeled "(Matthew's voice — his to review)" currently hold placeholder
+// wording written to keep the site moving, meant to sound like Matthew but not
+// yet approved by him. They're deliberately isolated fields so his edits never
+// touch layout or code. See docs/ASK-MATTHEW.md for the review list sent to him.
 
 export default config({
   storage: { kind: 'local' },
@@ -97,20 +98,20 @@ export default config({
           defaultValue: 'Licensed Professional Counselor (LPC), State of Ohio',
         }),
         approachNote: fields.text({
-          label: "How I work (Matthew's voice — DRAFT)",
+          label: "How I work (Matthew's voice — his to review)",
           description:
-            'Matthew’s personal take on how sessions with him feel, beyond the factual CBT/EFT description. REWRITE BEFORE LAUNCH — the current text is a placeholder.',
+            'Matthew’s personal take on how sessions with him feel, beyond the factual CBT/EFT description. Provisional wording, live on the site now — see docs/ASK-MATTHEW.md.',
           multiline: true,
           defaultValue:
-            '[DRAFT — Matthew to rewrite in his own words] Sessions with me are unhurried and honest. We go at your pace, and nothing you say will shock me.',
+            'Sessions with me are unhurried and honest. We go at your pace, and nothing you say will shock me.',
         }),
         faithNote: fields.text({
-          label: "On faith (Matthew's voice — DRAFT)",
+          label: "On faith (Matthew's voice — his to review)",
           description:
-            'Matthew’s personal words about faith-based integration. The factual policy (available if you want it, never assumed) is stated separately on the page — this field is his personal framing. REWRITE BEFORE LAUNCH.',
+            'Matthew’s personal words about faith-based integration. The factual policy (available if you want it, never assumed) is stated separately on the page — this field is his personal framing. Provisional wording — see docs/ASK-MATTHEW.md.',
           multiline: true,
           defaultValue:
-            '[DRAFT — Matthew to rewrite in his own words] Faith is a meaningful part of my own story, and if it’s part of yours, we can bring it into our work together. If it isn’t, that changes nothing about the care you’ll receive.',
+            'Faith is a meaningful part of my own story, and if it’s part of yours, we can bring it into our work together. If it isn’t, that changes nothing about the care you’ll receive.',
         }),
       },
     }),
@@ -154,9 +155,9 @@ export default config({
           multiline: true,
         }),
         whatThisFeelsLike: fields.text({
-          label: "What this feels like (Matthew's voice — DRAFT)",
+          label: "What this feels like (Matthew's voice — his to review)",
           description:
-            'The opening of the specialty page, speaking directly to the person’s experience. REWRITE BEFORE LAUNCH — the current text is a short placeholder, not finished copy.',
+            'The opening of the specialty page, speaking directly to the person’s experience. Provisional wording, live on the site now — see docs/ASK-MATTHEW.md.',
           multiline: true,
         }),
         howWeWork: fields.text({
