@@ -30,7 +30,7 @@ export default config({
         phone: fields.text({
           label: 'Phone (optional)',
           description: 'Shown as a tap-to-call link on the contact page if filled in. Leave blank to hide.',
-          defaultValue: '513-255-6130',
+          defaultValue: '513-255-2325',
         }),
         simplePracticeUrl: fields.url({
           label: 'SimplePractice scheduling link',
