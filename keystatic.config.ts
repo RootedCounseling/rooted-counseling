@@ -61,7 +61,7 @@ export default config({
         heroHeading: fields.text({
           label: 'Hero heading',
           multiline: true,
-          defaultValue: 'Whatever brought you here tonight, you don’t have to carry it alone.',
+          defaultValue: 'Whatever brought you here, you don’t have to carry it alone.',
         }),
         heroSubtext: fields.text({
           label: 'Hero subtext',

@@ -21,6 +21,11 @@ const nav = [
 const current = (href: string) =>
   path === href || (href !== '/' && path.startsWith(href)) ? 'page' : undefined;
 
+// The header's own "Reach out" button already goes to /contact/, so the header
+// nav skips that link to avoid two ways to the same page sitting side by side.
+// The footer's page list still uses the full `nav` array below.
+const headerNav = nav.filter((item) => item.href !== '/contact/');
+
 const canonicalUrl = new URL(path, Astro.site).toString();
 const ogImageUrl = new URL(site.headshot ?? '/assets/matthew-headshot.jpg', Astro.site).toString();
 
@@ -74,7 +79,7 @@ const jsonLd = {
           <span>Counseling</span>
         </a>
         <nav class="site-nav" aria-label="Main">
-          {nav.map((item) => (
+          {headerNav.map((item) => (
             <a href={item.href} aria-current={current(item.href)}>{item.label}</a>
           ))}
           <a class="btn btn-primary" href="/contact/">Reach out</a>
