@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { fees, site } from '../lib/content';
+import { fees, site, schedulingReady } from '../lib/content';
 ---
 
 <Base
@@ -41,8 +41,14 @@ import { fees, site } from '../lib/content';
       <h2>Anything else?</h2>
       <p>
         If your question isn't here, just ask — <a href="/contact/">send a message</a> and Matthew will reply
-        personally. Or <a href={site.simplePracticeUrl} rel="noopener">schedule directly through SimplePractice</a>.
+        personally.
+        {schedulingReady && (
+          <> Or <a href={site.simplePracticeUrl} rel="noopener">schedule directly through SimplePractice</a>.</>
+        )}
       </p>
+      {!schedulingReady && (
+        <p>Online scheduling is coming soon — for now, reaching out is the fastest way to get started.</p>
+      )}
     </div>
   </section>
 </Base>

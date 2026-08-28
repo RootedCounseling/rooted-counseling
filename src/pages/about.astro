@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { about, site } from '../lib/content';
+import { about, site, schedulingReady } from '../lib/content';
 ---
 
 <Base
@@ -49,7 +49,11 @@ import { about, site } from '../lib/content';
         <li>Secure telehealth available statewide</li>
         <li>Works with adults and teens</li>
         <li>A free 15-minute phone or video consultation is available before your first session</li>
-        <li>Scheduling through <a href={site.simplePracticeUrl} rel="noopener">SimplePractice</a></li>
+        {schedulingReady ? (
+          <li>Scheduling through <a href={site.simplePracticeUrl} rel="noopener">SimplePractice</a></li>
+        ) : (
+          <li>Online scheduling — coming soon. For now, <a href="/contact/">reach out</a> to set up a time.</li>
+        )}
       </ul>
       {site.supervisionDisclosure && <p class="notice">{site.supervisionDisclosure}</p>}
 

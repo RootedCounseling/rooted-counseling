@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
-import { site } from '../lib/content';
+import { site, schedulingReady } from '../lib/content';
 ---
 
 <Base
   title="Reach out"
-  description="Send a short, private message to Matthew at Rooted Counseling Ohio, or schedule directly through SimplePractice. In person in West Chester, Ohio, or telehealth statewide."
+  description="Send a short, private message to Matthew at Rooted Counseling Ohio, or reach him directly by phone or email. In person in West Chester, Ohio, or telehealth statewide."
 >
   <section class="section">
     <div class="wrap contact-grid">
@@ -58,21 +58,31 @@ import { site } from '../lib/content';
           <strong>Free consultation</strong><br />
           Ask about a free 15-minute phone or video consultation before you schedule a first session.
         </p>
-        <p>
-          <strong>Schedule directly</strong><br />
-          <a href={site.simplePracticeUrl} rel="noopener">Book through SimplePractice</a>
-        </p>
+        {schedulingReady ? (
+          <p>
+            <strong>Schedule directly</strong><br />
+            <a href={site.simplePracticeUrl} rel="noopener">Book through SimplePractice</a>
+          </p>
+        ) : (
+          <p>
+            <strong>Online scheduling</strong><br />
+            Coming soon — for now, send a message or reach out directly below.
+          </p>
+        )}
         <p>
           <strong>Visit</strong><br />
           {site.addressLine1}<br />
           {site.addressLine2}
         </p>
-        {site.phone && (
-          <p>
-            <strong>Call</strong><br />
-            <a href={`tel:+1${site.phone.replace(/\D/g, '')}`}>{site.phone}</a>
-          </p>
-        )}
+        <p>
+          <strong>Call or email</strong><br />
+          {site.phone && (
+            <>
+              <a href={`tel:+1${site.phone.replace(/\D/g, '')}`}>{site.phone}</a><br />
+            </>
+          )}
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
         <p>
           <strong>Telehealth</strong><br />
           Secure video sessions for clients anywhere in Ohio.

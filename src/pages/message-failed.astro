@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { site } from '../lib/content';
+import { site, schedulingReady } from '../lib/content';
 ---
 
 <Base title="Message didn't send" description="The contact form hit a technical problem — here's how to reach Matthew directly.">
@@ -12,9 +12,12 @@ import { site } from '../lib/content';
         ignored — it just didn't send.
       </p>
       <p>
-        Please email Matthew directly at <strong>{site.email}</strong>, or
-        <a href={site.simplePracticeUrl} rel="noopener">schedule through SimplePractice</a> — scheduling works
-        independently of this form.
+        Please email Matthew directly at <strong>{site.email}</strong>
+        {schedulingReady && (
+          <> or <a href={site.simplePracticeUrl} rel="noopener">schedule through SimplePractice</a> — scheduling
+          works independently of this form</>
+        )}
+        .
       </p>
       <p><a href="/contact/">Try the form again</a></p>
     </div>

@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { site, specialties } from '../../lib/content';
+import { site, specialties, schedulingReady } from '../../lib/content';
 
 export function getStaticPaths() {
   return specialties.map((s) => ({ params: { slug: s.slug }, props: { specialty: s } }));
@@ -27,7 +27,9 @@ const others = specialties.filter((s) => s.slug !== specialty.slug);
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/contact/">Reach out</a>
-        <a class="btn btn-quiet" href={site.simplePracticeUrl} rel="noopener">Schedule a session</a>
+        {schedulingReady && (
+          <a class="btn btn-quiet" href={site.simplePracticeUrl} rel="noopener">Schedule a session</a>
+        )}
       </div>
 
       <hr />

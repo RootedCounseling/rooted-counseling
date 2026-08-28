@@ -1,7 +1,7 @@
 ---
 import '@fontsource-variable/lora';
 import '../styles/global.css';
-import { site } from '../lib/content';
+import { site, schedulingReady } from '../lib/content';
 
 interface Props {
   title: string;
@@ -113,7 +113,11 @@ const jsonLd = {
               <li>Licensed in Ohio only</li>
               <li>Adults and teens</li>
               <li>Private pay — insurance is not accepted</li>
-              <li><a href={site.simplePracticeUrl} rel="noopener">Schedule via SimplePractice</a></li>
+              {schedulingReady ? (
+                <li><a href={site.simplePracticeUrl} rel="noopener">Schedule via SimplePractice</a></li>
+              ) : (
+                <li>Online scheduling — coming soon</li>
+              )}
             </ul>
           </div>
         </div>
