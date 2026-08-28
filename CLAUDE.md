@@ -117,19 +117,20 @@ When starting the dev server in an agent session, prefer background mode:
 ## Status
 
 - [x] Domain: `rootedcounseling.us`, purchased by Matthew on his own Namecheap account.
-- [x] Contact email (`matthew@rootedcounseling.us`) and phone (513-255-6130) are real,
-      in `content/site.json`. **Unverified: whether the domain inbox is actually
-      receiving mail** — test before relying on it for the contact form.
+- [x] Contact email (`matthew@rootedcounseling.us`, confirmed live/receiving mail) and
+      phone (513-255-6130) are real, in `content/site.json`.
 - [x] Supervision disclosure filled in: Jessica Moore, LPC-S (License
       #E.1901316-SUPV). Still worth confirming with the Ohio licensing board whether
       this disclosure is required at all — the brief says yes for supervised LPCs;
       Matthew's questionnaire said no. Moot if he's fully licensed (LPCC) by opening day.
-- [x] The 8 voice-copy fields are live with provisional wording; `docs/ASK-MATTHEW.md`
-      sent to him for review — see the note above.
+- [x] All 6 specialty `whatThisFeelsLike` passages are Matthew's own approved words
+      (3 revised by him, 3 approved as originally drafted).
+- [ ] 2 fields still pending his review: `approachNote` and `faithNote` in
+      `content/about.json` — see `docs/ASK-MATTHEW.md` (trimmed to just these two now).
 - [ ] SimplePractice scheduling link — still the placeholder URL in `content/site.json`
       until Matthew's SimplePractice account exists.
 - [ ] Set `RESEND_API_KEY` and `CONTACT_TO` in Vercel so the contact form delivers
-      (`CONTACT_TO` should be `matthew@rootedcounseling.us` once confirmed working)
+      (`CONTACT_TO` = `matthew@rootedcounseling.us`, confirmed working)
 - [ ] Code needs pushing to Matthew's own GitHub account and importing into his own
       Vercel account (he already has both) — see `docs/HANDOFF.md`
 - [ ] Point `rootedcounseling.us` at the Vercel deployment (DNS)

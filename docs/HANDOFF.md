@@ -46,13 +46,7 @@ He already has a Vercel account — this just points it at the new repo.
    - `RESEND_API_KEY` — from a free account at resend.com (recommend Matthew creates
      this one himself too, same as the domain/GitHub/Vercel accounts, so it's his to
      manage)
-   - `CONTACT_TO` = `matthew@rootedcounseling.us`
-     **Before relying on this: confirm that inbox is actually receiving mail.** Owning
-     the domain doesn't automatically create a mailbox — if `matthew@rootedcounseling.us`
-     isn't hooked up to an actual email provider yet (Google Workspace, Namecheap
-     Private Email, etc.), contact-form messages will send successfully but vanish. If
-     unsure, use a working personal email for `CONTACT_TO` until the domain inbox is
-     confirmed, then switch it later — it's a one-line change.
+   - `CONTACT_TO` = `matthew@rootedcounseling.us` (confirmed live and receiving mail)
 6. Redeploy (**Deployments → ⋯ → Redeploy**) so the environment variables take effect
 
 From here on, every `git push` to the GitHub repo redeploys the live site automatically —

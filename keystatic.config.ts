@@ -155,9 +155,9 @@ export default config({
           multiline: true,
         }),
         whatThisFeelsLike: fields.text({
-          label: "What this feels like (Matthew's voice — his to review)",
+          label: "What this feels like (Matthew's own words)",
           description:
-            'The opening of the specialty page, speaking directly to the person’s experience. Provisional wording, live on the site now — see docs/ASK-MATTHEW.md.',
+            'The opening of the specialty page, speaking directly to the person’s experience. Matthew has reviewed and approved all six of these.',
           multiline: true,
         }),
         howWeWork: fields.text({
