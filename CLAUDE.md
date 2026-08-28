@@ -22,13 +22,21 @@ When new voice-flavored text is needed:
    layout, never split across files
 3. Label the field `(Matthew's voice — his to review)` so it is obvious in the editing UI
 
-**Current status (2026-08-25):** 8 such fields are live on the site with provisional
-wording — the family made a deliberate call to launch now rather than block on Matthew's
-rewrite, and sent him `docs/ASK-MATTHEW.md`, a plain-language list of exactly those 8
-passages with instructions for changing any of them. This was an explicit, informed
-decision by the people running this project, not a default to repeat unprompted — the
-next AI session shouldn't assume it's fine to ship voice copy live-by-default just
-because it happened this once. The fields:
+**History (2026-08-25 to 2026-08-27):** 8 such fields launched live with provisional
+AI-drafted wording — an explicit, informed decision by the family to launch now rather
+than block on Matthew's rewrite, made alongside `docs/ASK-MATTHEW.md`, a plain-language
+review list sent to him. **As of 2026-08-27, Matthew has reviewed and approved all 8** —
+3 specialty passages and both About page notes were rewritten in his real words, the
+other 3 specialty passages he approved as originally drafted. `docs/ASK-MATTHEW.md` is
+now empty of open items and can be deleted or ignored. The point still stands for
+whatever comes next: don't treat "launch with placeholder voice copy, get sign-off after"
+as a standing default just because it happened once here — it was a deliberate call by
+the person running the project, not this rule's normal path.
+
+All voice fields (listed below) are now `(Matthew's own words)` in `keystatic.config.ts`.
+If any of them are ever reset to placeholder text again (a rewrite, a new specialty),
+follow the original process: short placeholder, isolated field, labeled
+`(Matthew's voice — his to review)`.
 
 - `whatThisFeelsLike` on each specialty (`content/specialties/*.json`)
 - `approachNote` and `faithNote` (`content/about.json`)
@@ -36,7 +44,7 @@ because it happened this once. The fields:
 Text that is **fine** to write normally: specialty names, session logistics, fees
 mechanics, FAQ answers about process, legal notices, navigation, headings.
 
-Two fields are Matthew's real words already and must not be reworded without him:
+Two more fields are Matthew's real words and must not be reworded without him:
 
 - `bio` in `content/about.json` — his verbatim statement. Note it contains the phrase
   "cultivate healing to your very core"; that is his wording, unrelated to the old
@@ -123,20 +131,21 @@ When starting the dev server in an agent session, prefer background mode:
       #E.1901316-SUPV). Still worth confirming with the Ohio licensing board whether
       this disclosure is required at all — the brief says yes for supervised LPCs;
       Matthew's questionnaire said no. Moot if he's fully licensed (LPCC) by opening day.
-- [x] All 6 specialty `whatThisFeelsLike` passages are Matthew's own approved words
-      (3 revised by him, 3 approved as originally drafted).
-- [ ] 2 fields still pending his review: `approachNote` and `faithNote` in
-      `content/about.json` — see `docs/ASK-MATTHEW.md` (trimmed to just these two now).
+- [x] All 8 voice-copy fields are Matthew's own approved words — 6 specialty passages
+      (3 revised by him, 3 approved as drafted) plus both About page notes
+      (`approachNote`, `faithNote`), all confirmed 2026-08-27. Nothing left pending on
+      the content side. `docs/ASK-MATTHEW.md` is now empty and can be deleted.
 - [ ] SimplePractice scheduling link — still the placeholder URL in `content/site.json`
       until Matthew's SimplePractice account exists.
 - [ ] Set `RESEND_API_KEY` and `CONTACT_TO` in Vercel so the contact form delivers
       (`CONTACT_TO` = `matthew@rootedcounseling.us`, confirmed working)
 - [ ] Code needs pushing to Matthew's own GitHub account and importing into his own
-      Vercel account (he already has both) — see `docs/HANDOFF.md`
+      Vercel account (he already has both) — see `docs/HANDOFF.md` and
+      `docs/MATTHEW-SETUP.md` (in progress as of 2026-08-27)
 - [ ] Point `rootedcounseling.us` at the Vercel deployment (DNS)
 - [ ] Update the Website field on Matthew's Google Business Profile to the live URL
       once DNS is live
 - [ ] Optionally enable Keystatic GitHub mode so Matthew can edit from any browser
 
-See `docs/EDITING.md` (for Matthew), `docs/ASK-MATTHEW.md` (the copy review list), and
+See `docs/EDITING.md` (for Matthew), `docs/MATTHEW-SETUP.md` (his launch checklist), and
 `docs/HANDOFF.md` (accounts, domain, deploys).

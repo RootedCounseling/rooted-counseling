@@ -3,10 +3,10 @@ import { config, fields, singleton, collection } from '@keystatic/core';
 // All site text lives in content/ as JSON files, edited through this admin UI
 // (/keystatic in local dev; see docs/EDITING.md for enabling it on the live site).
 //
-// Fields labeled "(Matthew's voice — his to review)" currently hold placeholder
-// wording written to keep the site moving, meant to sound like Matthew but not
-// yet approved by him. They're deliberately isolated fields so his edits never
-// touch layout or code. See docs/ASK-MATTHEW.md for the review list sent to him.
+// Fields labeled "(Matthew's own words)" hold personal/voice copy — his actual
+// wording, not AI-written. If a field like this is ever reset to a placeholder
+// again, label it "(Matthew's voice — his to review)" instead and see the note
+// in CLAUDE.md before writing anything into it.
 
 export default config({
   storage: { kind: 'local' },
@@ -98,20 +98,20 @@ export default config({
           defaultValue: 'Licensed Professional Counselor (LPC), State of Ohio',
         }),
         approachNote: fields.text({
-          label: "How I work (Matthew's voice — his to review)",
+          label: "How I work (Matthew's own words)",
           description:
-            'Matthew’s personal take on how sessions with him feel, beyond the factual CBT/EFT description. Provisional wording, live on the site now — see docs/ASK-MATTHEW.md.',
+            'Matthew’s personal take on how sessions with him feel, beyond the factual CBT/EFT description.',
           multiline: true,
           defaultValue:
-            'Sessions with me are unhurried and honest. We go at your pace, and nothing you say will shock me.',
+            'Sessions with me are unhurried and honest. We go at your pace. Everything you share will be held with grace and understanding.',
         }),
         faithNote: fields.text({
-          label: "On faith (Matthew's voice — his to review)",
+          label: "On faith (Matthew's own words)",
           description:
-            'Matthew’s personal words about faith-based integration. The factual policy (available if you want it, never assumed) is stated separately on the page — this field is his personal framing. Provisional wording — see docs/ASK-MATTHEW.md.',
+            'Matthew’s personal words about faith-based integration. The factual policy (available if you want it, never assumed) is stated separately on the page — this field is his personal framing.',
           multiline: true,
           defaultValue:
-            'Faith is a meaningful part of my own story, and if it’s part of yours, we can bring it into our work together. If it isn’t, that changes nothing about the care you’ll receive.',
+            'Faith is a meaningful part of my own story, and if it’s part of yours, we can bring it into our work together. If it isn’t, we still approach things based on your values and unique perspective.',
         }),
       },
     }),
